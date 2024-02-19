@@ -2,7 +2,7 @@ package JAVA_240208.Operator;
 
 public class Operator7 {
     public static void main(String[] args) {
-        // 두 값을 비굑하는데 사용하는 비교 연산자
+        // 두 값을 비교하는데 사용하는 비교 연산자
         // == 같다 (equal to)
         // != 같지 않다 (not equal to)
         // > 크다 (greater than)

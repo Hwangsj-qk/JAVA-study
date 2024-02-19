@@ -3,7 +3,7 @@ package JAVA_240214.array;
 public class Array4 {
     public static void main(String[] args) {
         // 다차원 배열
-        int [] [] matrix = new int[3][2];   // 3행 2열
+        int [][] matrix = new int[3][2];   // 3행 2열
 
         // 다차원 배열 초기화
         matrix[0][0] = 1;   // 0행 0열

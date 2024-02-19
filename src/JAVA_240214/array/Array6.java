@@ -14,7 +14,7 @@ public class Array6 {
         }
 
         // 2차원 배열 출력
-        for (int[] rows: matrix) {
+        for (int[] rows: matrix) {  // 향상된 for문
             for (int element = 0; element < rows.length; element++) {
                 System.out.print(rows[element] + " ");
             }
