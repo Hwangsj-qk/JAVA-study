@@ -19,7 +19,8 @@ public class Condition6 {
         }
         System.out.println("모두 " + dc + "원 할인되었습니다. ");
 
-        //각각의 조건이 독리 조건일 때 if문을 개별적으로 사용
+        //각각의 조건이 독립 조건일 때 if문을 개별적으로 사용
+        // -> 여기서 조건이 price와 age 두 가지이므로 개별적으로 if문 사용
         // 모두 연관되는 조건일 때 else - if문을 사용함.
     }
 }

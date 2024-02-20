@@ -4,7 +4,7 @@ public class Condition4 {
     public static void main(String[] args) {
         int age = 22;
 
-        if(age <= 7) {
+        if(age <= 7) {      // 이전 값은 이미 앞에서 가져감
             System.out.println("미취학 아동입니다. ");
         } else if (age <= 13) {
             System.out.println("초등학생입니다. ");
