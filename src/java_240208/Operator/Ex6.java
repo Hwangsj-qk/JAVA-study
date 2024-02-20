@@ -1,4 +1,4 @@
-package JAVA_240208.Operator;
+package java_240208.Operator;
 
 public class Ex6 {
     public static void main(String[] args) {
