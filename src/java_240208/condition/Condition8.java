@@ -1,4 +1,4 @@
-package JAVA_240208.condition;
+package java_240208.condition;
 
 public class Condition8 {
     public static void main(String[] args) {
