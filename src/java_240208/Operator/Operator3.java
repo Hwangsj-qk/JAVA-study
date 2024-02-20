@@ -1,9 +1,9 @@
-package JAVA_240208.Operator;
+package java_240208.Operator;
 
 public class Operator3 {
     public static void main(String[] args) {
         // 연산자의 우선순위
-        // 우선순위에 의해 곱셈이 먼저 계산
+        // 우선순위에 의해 곱셈이 먼저 계산 (사칙연산과 동일)
         // 우선순위를 변경하려면 괄호를 사용
         int sum1 = 1+2 *3;
         int sum2 = (1+2) * 3;
