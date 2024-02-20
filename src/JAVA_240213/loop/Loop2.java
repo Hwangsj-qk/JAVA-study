@@ -19,7 +19,7 @@ public class Loop2 {
 
         // 반복문을 사용하게 될 경우, 반복 횟수와 요구 조건을 유연하게 변경할 수 있다.
         while (i <= end) {
-            sum = sum +i;
+            sum = sum +i;   // 0, 0+5, 5+6, ....
             System.out.println("sum= " + sum);
             i++;
         }
