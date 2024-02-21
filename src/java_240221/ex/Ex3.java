@@ -7,5 +7,7 @@ public class Ex3 {
         System.out.println("average=" + MathArrayUtils.average(values));
         System.out.println("min=" + MathArrayUtils.min(values));
         System.out.println("max=" + MathArrayUtils.max(values));
+
+        // 생성이 되지 않게 맞기 => 생성자를 private로 수정
     }
 }

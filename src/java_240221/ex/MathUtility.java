@@ -1,9 +1,9 @@
 package java_240221.ex;
 
 public class MathUtility {
-    int a;
-    int b;
-    static int max(int a, int b) {
+  // 유틸리티 클래스는 보통 필드가 없음
+
+    public static int max(int a, int b) {
         if (a > b) {
             return  a;
         }else {
@@ -11,22 +11,22 @@ public class MathUtility {
         }
 
     }
-    static int min(int a, int b) {
+    public static int min(int a, int b) {
         if (a < b) {
             return b;
         } else {
             return a;
         }
+//        return a < b ? a: b;  => 간단해서 삼항연산자 사용 가능
     }
-    static int sum(int a, int b) {
-        return a+ b;
+    public static int sum(int a, int b) {
+        return a + b;
     }
 
-    static int factorial(int n) {
+    public static int factorial(int n) {
         int result = 1;
-        for (int i = 1; i <= n; i++) {
+        for (int i = n; i >= 1; i--) {
             result *= i;
-
         }
         return result;
     }

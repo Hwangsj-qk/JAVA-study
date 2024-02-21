@@ -6,7 +6,7 @@ public class BankAccount {
     private int accountId;
     private int balance;
 
-    static int  count;
+    static int  count = 1 ;
 
     BankAccount(int accountId, int balance) {
         this.accountId = accountId;

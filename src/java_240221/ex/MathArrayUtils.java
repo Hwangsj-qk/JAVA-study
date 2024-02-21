@@ -3,15 +3,19 @@ package java_240221.ex;
 public class MathArrayUtils {
     static int[] array;
 
+    private MathArrayUtils() {
 
-    static int sum(int[]array) {
+    }
+
+
+    public static int sum(int[]array) {
         int sum = 0;
         for (int i : array) {
             sum += i;
         } return sum;
     }
 
-    static double average(int[] array) {
+    public static double average(int[] array) {
         double sum = 0;
         for (int i : array) {
             sum += i;
@@ -19,7 +23,7 @@ public class MathArrayUtils {
           return mean;
     }
 
-    static int max(int[] array) {
+    public static int max(int[] array) {
         int max = array[0];
 
         for (int i = 0; i < array.length; i++) {
@@ -28,7 +32,7 @@ public class MathArrayUtils {
             }
         } return max;
     }
-    static int min(int[] array) {
+    public static int min(int[] array) {
         int min = array[0];
 
         for (int i = 0; i < array.length; i++) {

@@ -6,8 +6,6 @@ public class Logger {
 
 
     // 메소드
-
-
     public static void setLogLevel(String logLevel) {
         Logger.logLevel = logLevel;
     }
