@@ -13,7 +13,7 @@ public class EnhanceFor {
         }
 
         // 향상된 for문
-        for(int num: nums) {        // nums 배열 안의 구성요소를 모두 순회
+        for(int num: nums) {        // nums 배열 안의 '구성요소'(어떤 숫자에서 시작해서 값이 달라지는 것이 아니라 구성요소 안!)를 모두 순회
             System.out.println(num);
         }
         /*
