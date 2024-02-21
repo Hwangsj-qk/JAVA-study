@@ -1,11 +1,9 @@
 package java_240220.access_modifier;
 
 public class Access2 {
-    public Access2() {
-    }
 
     public static void main(String[] args) {
-        Car car = new Car();
+        Car car = new Car();    // new Car() : 힙 영역
 
         car.speedUp();
         car.speedDown();
