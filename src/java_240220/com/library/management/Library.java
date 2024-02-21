@@ -23,7 +23,7 @@ public class Library {
 
     public void listBooks() {
         for (int i = 0; i < index; i++) {
-            System.out.println(i + 1 + ". 제목: " );
+            System.out.println(i + 1 + ". 제목: " + books[i].getTitle() );
 
         }
 
