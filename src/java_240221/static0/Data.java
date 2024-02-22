@@ -13,4 +13,10 @@ public class Data {
     public int getField() {
         return field;
     }
+
+    // 세터 메서드
+
+    public void setField(int field) {
+        this.field = field;
+    }
 }
