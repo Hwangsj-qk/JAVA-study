@@ -25,14 +25,11 @@ public class Ex5 {
             for (int i = 0; i < scores.length; i++) {     // i = 학생 수
                 int sum = 0;    // 학생마다 sum의 점수가 다르므로 반복문 안에서 선언
                 for (int j = 0; j < scores[i].length; j++) {
-                    sum += scores[i][j];
+                    sum += scores[i][j];    // [0][0] + [0][1] + [0][2] 의 합계
                 }
                 System.out.println(i + 1 + "번 학생의 합계: " + sum);
                 System.out.println(i + 1 + "번 학생의 평균: " + sum/scores[i].length);
             }
-
-
-
 
 
             }
