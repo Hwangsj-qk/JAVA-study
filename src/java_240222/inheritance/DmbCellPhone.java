@@ -8,4 +8,9 @@ public class DmbCellPhone extends CellPhone {
     void turnOnDmb() {  // 새로운 기능 추가
         System.out.println(channel + "번 DMB방송을 수신합니다. ");
     }
+
+    @Override
+    void bell() {
+        super.bell();       // 부모 클래스의 메서드를 그대로 실행
+    }
 }

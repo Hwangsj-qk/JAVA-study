@@ -9,4 +9,6 @@ public class CellPhone {
     void bell() {
         System.out.println("벨이 울립니다.");
     }
+
+
 }
