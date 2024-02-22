@@ -8,6 +8,7 @@ public class Ex5 {
         // 여기서는 public static final~ (X) => final만 앞에 붙여주기
         Account account = new Account("010234-5677","홍길동", 100000 );
 
+//        account.accountNumber  = "2224334-12345"      => 접근 불가
         account.printInfo();
 
     }
