@@ -1,6 +1,14 @@
 package test1_practice;
 
 public class Product {
+    /*
+    ProductOrder 클래스를 생성하고,
+상품명, 가격, 주문수량 필드를 만든다.
+productName, price, quantity
+
+상품, 가격, 수량을 3개 담아서
+총 결제금액을 계산하는 프로그램을 만들어보세요.
+     */
     public static void main(String[] args) {
         ProdctOrder order1 = new ProdctOrder();
         order1.productName = "노트북";

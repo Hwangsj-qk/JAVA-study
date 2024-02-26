@@ -39,7 +39,7 @@ public class Switch {
                 break;
 
             default:
-                throw new IllegalStateException("Unexpected value: " + operator);       // 선생님께 여쭤보기
+                throw new IllegalStateException("Unexpected value: " + operator);
 
         }
         System.out.println("결과: " + result);
