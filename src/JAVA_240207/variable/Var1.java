@@ -22,7 +22,5 @@ public class Var1 {
         int result = score + number;    // 다른 변수의 값을 불러들여 저장 또는 연산이 가능
         System.out.println("결과: " + result);
 
-
-
     }
 }
