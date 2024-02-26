@@ -22,7 +22,7 @@ public class Loop6 {
             break;
         }
         for ( ; ; ) {
-            // 무한 반복하는 코드 (while문과 동일한 결과)
+            // 무한 반복하는 코드 (while문과 동일한 결과, 조건 없음)
         }
     }
 }

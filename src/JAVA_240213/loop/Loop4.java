@@ -20,7 +20,7 @@ public class Loop4 {
                 System.out.println("sum = " + sum);
                 break; // while문의 조건이 true일지라도 if문의 조건 이후에는 종료 (if문을 종료하는 것이 아니라 while문을 종료 시킴)
             }
-            i++; // i가 하나씩 증가함
+            i++; // i가 하나씩 증가함(if문에 false로 걸리지 않으면 계속 1씩 더함)
         }
     }
 }

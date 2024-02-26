@@ -14,7 +14,7 @@ public class Loop5 {
         int i = 1;
         while (i < 6) {
             if(i == 3) {
-                i++;
+                i++;    // i = 3일때, 프린트하지 말고 +1을 해서 넘어감
                 continue;
             }
             System.out.println("i = " + i);
