@@ -32,7 +32,6 @@ public class Test3 {
                 System.out.println("오답! up 하세요. ");
 
             }
-            break;
         } while (answer != tryNumber);
                 System.out.println("정답!" + tryCount + "번에 맞추셨네요!");
             }
