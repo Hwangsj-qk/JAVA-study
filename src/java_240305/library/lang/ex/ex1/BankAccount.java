@@ -1,4 +1,4 @@
-package java_240305.library.lang.ex1;
+package java_240305.library.lang.ex.ex1;
 
 public class BankAccount {
     public static void main(String[] args) {
