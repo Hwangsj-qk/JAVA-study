@@ -1,5 +1,7 @@
 package java_240305.library.lang;
 
+import java.util.Arrays;
+
 public class CloneTest {
     public static void main(String[] args) throws CloneNotSupportedException {
         int[] array = {1, 2, 3, 4};
@@ -57,6 +59,23 @@ public class CloneTest {
         for (int i : cloneDeep.array) {
             System.out.print(i + " ");
         }
+
+
+        System.out.println("\n=====2차원 배열변경=====");
+        System.out.println(Arrays.deepToString(originalDeep.deepArray));
+        System.out.println(Arrays.deepToString(cloneDeep.deepArray));
+
+        originalDeep.deepArray[0][0] = 9;
+
+        // 배열 차원마다 복제하지 않으면 고차원 배열 요소가 함께 변경.
+        //clone시 내부까지 진입하여 복제해야함
+        System.out.println("=====변경 후=====");
+
+        System.out.println(Arrays.deepToString(originalDeep.deepArray));
+        System.out.println(Arrays.deepToString(cloneDeep.deepArray));
+
+        // 깊은 복사는 원본이 훼손되지 않도록 주의해야 함.
+        // 나중에 선생님 파일보고 한 번 다시 하기
     }
 
 
