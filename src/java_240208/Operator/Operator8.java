@@ -2,7 +2,7 @@ package java_240208.Operator;
 
 public class Operator8 {
     public static void main(String[] args) {
-        // 문자열 비교
+        // 문자열 비교: equals() 활용
         String s1 = "안녕";
         String s2 = "안녕하세요";
         String s3 = "안녕";
