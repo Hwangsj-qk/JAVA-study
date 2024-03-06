@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Random {
     // loop - ex8
     public static void main(String[] args) {
-        Random random = new Random();
+/*        Random random = new Random();
         int answer = (int) (Math.random() * 100) + 1; // 1~ 100까지 랜덤한 숫자
 
         System.out.println(answer);
@@ -30,7 +30,7 @@ public class Random {
 
         System.out.println("정답을 맞추셨네요! 축하드려요!" + tryCount + "번만에 맞추셨네요!");
 
-        // 탐색하는 숫자를 절반씩 줄여가는 방법: 이진 탐색(binarySearch)
+        // 탐색하는 숫자를 절반씩 줄여가는 방법: 이진 탐색(binarySearch)*/
 
 
         }

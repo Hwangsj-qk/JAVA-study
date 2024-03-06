@@ -2,7 +2,10 @@ package java_240305.library.lang.ex;
 
 import test1_practice.Array;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Ex10 {
     /*
@@ -44,8 +47,74 @@ public class Ex10 {
                 "박보검,22,bogum@daum.net;" +
                 "김민아,35,mina@gmail.com";
 
-        String [] memberInfo = sentence.split(",");
+        String [] memberInfo = sentence.split("[;]");
         System.out.println(Arrays.toString(memberInfo));
+
+        System.out.println("전체 사용자 수: " + memberInfo.length);
+        System.out.println();
+
+        List<String> name = new ArrayList<>();
+        List<Integer> age = new ArrayList<>();
+        int max = 0;
+        String elder = null;
+        int firstName =0;
+
+
+
+
+
+        for (String s : memberInfo) {
+            String [] member = s.split(",");
+//            System.out.println(Arrays.toString(member));
+
+            System.out.println("이름: " + member[0] + ", 나이: " + member[1] + ", 이메일: " + member[2]);
+
+            if (member[2].contains("gmail.com")) {
+                name.add(member[0]);
+            }
+            age.add(Integer.parseInt(member[1]));
+            max = age.get(0);
+            elder = member[0];
+
+            for (Integer num : age) {
+                if(num > max){
+                    max = num;
+                }
+            }
+            for (String elderMember : member) {
+                if(Integer.parseInt(member[1]) == max) {
+                    elderMember = elder;
+                }
+            }
+            if (member[0].contains("김")) {
+                firstName++;
+            }
+        }
+
+
+
+
+
+        System.out.println();
+        System.out.println("\"gmail.com\" 도메인 사용자: ");
+        for (String s : name) {
+            System.out.println(s);
+        }
+
+        System.out.println();
+        System.out.println("가장 나이가 많은 사용자: ");
+        System.out.println("이름: " + elder + ", 나이: " + max);
+
+        System.out.println();
+        System.out.println("\"김\"이 포함된 사용자수: ");
+        System.out.println(firstName);
+
+
+
+
+
+
+
 
 
 

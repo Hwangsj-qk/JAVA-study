@@ -15,8 +15,8 @@ public class Ex6 {
     사용자 홈 디렉토리: /Users/username
      */
         public static void main(String[] args) {
-            Map<String, String> getenv = System.getenv();
-            String home = System.getenv("HOME");
-            System.out.println("\n 사용자 홈 디렉토리: \n" + home);
+            // OS에 따라 key 값이 다를 수 있음.
+            String home = System.getenv("USERPROFILE");
+            System.out.println("사용자 홈 디렉토리: " + home);
         }
 }

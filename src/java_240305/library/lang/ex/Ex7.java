@@ -1,5 +1,7 @@
 package java_240305.library.lang.ex;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Ex7 {
         /*
     연습문제 3: 시스템 속성 출력
@@ -14,4 +16,16 @@ System.getProperty() 메소드를 사용하여 각 속성("java.version", "os.na
 운영 체제: Mac OS X
 사용자 작업 디렉토리: /Users/username/projects
      */
+        public static void main(String[] args) {
+            String javaVersion = System.getProperty("java.version");
+            String onName = System.getProperty("os.name");
+            String userDir = System.getProperty("user.dir");
+
+            System.out.println("자바 버전: " + javaVersion);
+            System.out.println("운영 체제: " + onName);
+            System.out.println("사용자 작업 디렉토리: " + userDir);
+
+        }
+
+
 }
