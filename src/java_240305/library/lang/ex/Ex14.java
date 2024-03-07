@@ -23,7 +23,8 @@ Cherry:  2,000원
 
         System.out.println("과일 가격표");
         for (int i = 0; i < fruits.length; i++) {
-            System.out.println(String.format("%-7s",fruits[i]) + " : " +  String.format("%7s",prices[i]) + "원");
+            System.out.println(String.format("%-7s",fruits[i]) + " : " +  String.format("%,7d",prices[i]) + "원");
+            // 가격에 쉼표 넣기
 
         }
     }
