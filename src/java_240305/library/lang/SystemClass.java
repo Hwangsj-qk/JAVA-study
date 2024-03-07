@@ -9,7 +9,7 @@ public class SystemClass {
     public static void main(String[] args) {
         // System 클래스는 객체를 생성하지 않는다.
         // 모든 멤버를 static으로 클래스 이름을 통해 접근하여 사용한다.
-//        System system = new System();     오류(객체를 생성하지 않는다)
+//        System system = new System();     오류(객체를 생성하지 않는다 - 접근 제어자: private)
         System.out.println();       // 표준 출력 PrintStream 을 사용
 
         // 필드
