@@ -42,20 +42,24 @@ Java 프로그래밍, 문자열 처리 연습
         // 문자열의 길이
         System.out.println("문자열 길이: " + sentence.length());
 
-        int count = 0;
+
         // 공백의 수
+        int whiteSpaceCount = 0;
+
         for (int i = 0; i < sentence.length(); i++) {
             char tmpchar = sentence.charAt(i);
 
             if (tmpchar==' ') {
                 // 캐릭터는 작은 따옴표를 사용하므로 공백 표시할 때 ' '를 사용하지 않으면 에러 발생
-                count++;
+                whiteSpaceCount++;
             }
         }
-        System.out.println("공백 수: " + count);
+        System.out.println("공백 수: " + whiteSpaceCount);
+
 
         // 각 부분의 문자열 길이
         String [] words = sentence.split(",");
+        // 이미 배열 words 안에는 ,를 기준으로 나눈 배열 값이 들어가 있음
 
         List<Integer> wordLength = new ArrayList<Integer>();
 
@@ -82,11 +86,10 @@ Java 프로그래밍, 문자열 처리 연습
         }
         System.out.println("\"a\" 문자의 수: " +countA);
 
-
-
-
-
-
+        // a 찾는 다른 방법
+        // + 대문자와 소문자 모두 세어야 할 경우
+        int countALength = sentence.toLowerCase().length() - sentence.toLowerCase().replace("a", "").length();
+        System.out.println("\"a\" 문자의 수(다른 방법): " + countALength);
 
 
     }

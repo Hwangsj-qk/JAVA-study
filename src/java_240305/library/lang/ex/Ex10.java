@@ -14,7 +14,7 @@ public class Ex10 {
 사용자 정보가 담긴 문자열 데이터가 있습니다.
 각 사용자 정보는 세미콜론(;)으로 구분되어 있으며,
 각 사용자의 정보 내에서는 이름, 나이, 이메일이 콤마(,)로 구분되어 있습니다.
-이 데이터를 파싱하여 다음 정보를 출력하는 프로그램을 작성하세요.
+이 데이터를 파싱(쪼개서 분석)하여 다음 정보를 출력하는 프로그램을 작성하세요.
 
 - 전체 사용자 수.
 - 각 사용자의 이름, 나이, 이메일 정보 출력.
@@ -53,24 +53,22 @@ public class Ex10 {
         System.out.println("전체 사용자 수: " + memberInfo.length);
         System.out.println();
 
-        List<String> name = new ArrayList<>();
+        List<String> name = new ArrayList<>();      // 내부적으로 배열의 형태를 가지고 있는 리스트를 만듦
         List<Integer> age = new ArrayList<>();
         int max = 0;
         String elder = null;
         int firstName =0;
 
 
-
-
-
         for (String s : memberInfo) {
             String [] member = s.split(",");
 //            System.out.println(Arrays.toString(member));
 
+            // 사용자 정부 출력
             System.out.println("이름: " + member[0] + ", 나이: " + member[1] + ", 이메일: " + member[2]);
 
-            if (member[2].contains("gmail.com")) {
-                name.add(member[0]);
+            if (member[2].contains("gmail.com")) {      // endWith()도 활용할 수 있음
+                name.add(member[0]);        // StringBuilder 사용 후 append 사용 가능
             }
             age.add(Integer.parseInt(member[1]));
             max = age.get(0);
@@ -82,7 +80,7 @@ public class Ex10 {
                 }
             }
             for (String elderMember : member) {
-                if(Integer.parseInt(member[1]) == max) {
+                if(Integer.parseInt(member[1]) > max) {
                     elderMember = elder;
                 }
             }
@@ -91,21 +89,23 @@ public class Ex10 {
             }
         }
 
-
-
-
-
         System.out.println();
+
+        // "gmail.com" 도메인 사용자 출력
         System.out.println("\"gmail.com\" 도메인 사용자: ");
         for (String s : name) {
             System.out.println(s);
         }
 
         System.out.println();
+
+        // 가장 나이가 많은 사용자 출력
         System.out.println("가장 나이가 많은 사용자: ");
         System.out.println("이름: " + elder + ", 나이: " + max);
 
         System.out.println();
+
+        // "김"이 포함된 사용자수 출력
         System.out.println("\"김\"이 포함된 사용자수: ");
         System.out.println(firstName);
 
