@@ -30,4 +30,8 @@ public class Ex7 {
         System.out.println("최대공약수: " + gdc);
         System.out.println("최소공배수: " + lcm);
     }
+
+    /* 유클리드 호제법
+
+     */
 }
