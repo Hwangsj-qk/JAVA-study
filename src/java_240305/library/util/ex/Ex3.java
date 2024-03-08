@@ -1,6 +1,7 @@
 package java_240305.library.util.ex;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Ex3 {
@@ -23,13 +24,23 @@ public class Ex3 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("원금을 입력하세요: ");
         BigDecimal principal = scanner.nextBigDecimal();
+        BigDecimal num = new BigDecimal(1);
 
         System.out.print("연이율을 입력하세요: ");
         BigDecimal annualInterestRate = scanner.nextBigDecimal();
 
         System.out.print("기간을 입력하세요: ");
-        BigDecimal termInYear = scanner.nextBigDecimal();
+        int termInYear = scanner.nextInt();     // 제곱은 정수로 한다.
 
-//        BigDecimal result = annualInterestRate.add(new BigDecimal("1.0")).pow("termInYear
+
+        BigDecimal result = principal.
+                multiply(annualInterestRate.
+                        add(num).
+                        pow(termInYear));
+        System.out.printf("최종 금액: %.2f", result);
+
+
+
+
     }
 }
