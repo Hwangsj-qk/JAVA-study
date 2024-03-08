@@ -47,7 +47,7 @@ public class BigNumber {
         System.out.println("0.1 + 0.2 = " + (0.1 + 0.2));
         // 제대로 계산 못함(컴퓨터한테는 소수가 어려움)
 
-        BigDecimal bigDecimal1 = new BigDecimal("0.1");
+        BigDecimal bigDecimal1 = new BigDecimal("1.0");
         BigDecimal bigDecimal2 = new BigDecimal("0.2");
 
         System.out.println("===== BigDecimal 사용 =====");
