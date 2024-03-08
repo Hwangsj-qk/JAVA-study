@@ -16,14 +16,13 @@ public class Ex6 {
      */
     public static void main(String[] args) {
 //        "America/NewYork", "Europe/London","Asia/Seoul";
+        LocalDateTime localTime = LocalDateTime.of(2024,3,8,15,0,0);
 
-        LocalDateTime time = LocalDateTime.of(2024,3,8,15, 00, 00);
+        System.out.println("회의는 뉴욕 기준으로 오후 3시에 시작합니다.");
 
-        ZonedDateTime newYork = ZonedDateTime.of(time, ZoneId.of("America/New_York"));
-        System.out.println("NewYork = " + newYork);
+        // 날짜 형식에 패턴 문자를 맞춘다. a(PM/AM) h(시간)
 
-        // 2. 서울 시간
-        ZoneId seoulZoneId = ZoneId.of("Asia/Seoul");
+        
 
 
     }

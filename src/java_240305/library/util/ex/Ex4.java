@@ -30,17 +30,15 @@ public class Ex4 {
 
         // 생일을 입력 받아 날짜 데이터로 전환
         String birthDay = scanner.next();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-d");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate parsedBirthDay = LocalDate.parse(birthDay, formatter);
+        // 일반적인 날짜 포맷일 경우, 포맷 없이도 문자열 파싱 가능
         LocalDate finalBirthDay = parsedBirthDay.withYear(2024);
-//        System.out.println("birthDayYear = " + finalBirthDay);
-
-
 
         // 현재 날짜 데이터
         LocalDate now = LocalDate.now();
-//        System.out.println("현재 날짜: " + now);
 
+        // 남은 생일 구하기
         if (now.isBefore(finalBirthDay)) {
             Period between1 = Period.between(now, finalBirthDay);
             int between1Final = between1.getMonths() * 30 + between1.getDays();
