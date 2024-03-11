@@ -3,7 +3,7 @@ package JAVA_240214.reference;
 public class Ref1 {
     public static void main(String[] args) {  // 메소드 영역 -> 스택 영역
 
-        // int는 기본타입(앞에 소문자)
+        // int는 기본타입(앞에 소문자)슽
         int int1 = 10;      // 변수 선언, 초기화 -> 스택 영역: 10(4바이트 안에서 따로 생성 없이 저장)
         int int2 = 10;
 
