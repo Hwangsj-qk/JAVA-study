@@ -5,12 +5,13 @@ public class Generic1 {
         Box box = new Box();
 
         // 어떤 타입이 들어가도 에러가 뜨지 않음 -> 모든 종류의 데이터가 대입 가능
-        box.content =  "이번엔 문자열 ";
+        box.content =  "이번엔 문자열 ";  //  현재 box는 Object 타입
 //        box.content = Integer.valueOf(10);
         // 에러 발생
+//        box.content.length()    // 메서드가 먹히지 않음
+//        -> Object 타입은 자식 객체의 메서드 정보를 가지고 있지 않다.
 
 
-//        box.content.length()    // 메서드가 먹히지 않음  -> Object 타입은 자식 객체의 메서드 정보를 가지고 있지 않다.
         int length = ((String) box.content).length();
         // 자식 타입의 메서드를 사용하려면 강제로 캐스팅해주는 것이 필요
 
@@ -24,7 +25,7 @@ public class Generic1 {
     }
     // 모든 타입을 다 담을 수 있는 박스 클래스 (object 객체 활용)
     static class Box {
-        // Object는 최상위 클래스이기 때문에 모든 객체가 대입이 가능하다.
+        // Object 는 최상위 클래스이기 때문에 모든 객체가 대입이 가능하다.
         public Object content;
 
         public Object getContent() {
