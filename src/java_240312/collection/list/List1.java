@@ -31,6 +31,7 @@ public class List1 {
 
         // 요소 접근
         System.out.println(names.get(3));       // 이몽룡
+        System.out.println(names.indexOf("전우치"));
 
         // 객체 저장 여부 확인 -> boolean
         System.out.println(names.contains("이순신"));      // true
