@@ -27,7 +27,7 @@ public class List1 {
 
         names.set(2, "전우치");        // 특정 인덱스의 객체를 변경
 
-        System.out.println(names);      // [홍길동, 이순신, 전우치, 이몽룡]
+        System.out.println(names);      // [홍길동, 이순신, 전우치, 이몽룡] -> 임꺽정 대시 전우치가 인덱스 2번으로 변경
 
         // 요소 접근
         System.out.println(names.get(3));       // 이몽룡
