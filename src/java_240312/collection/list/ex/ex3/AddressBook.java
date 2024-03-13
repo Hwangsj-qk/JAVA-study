@@ -26,7 +26,7 @@ public class AddressBook {
     // 삭제
     public void deleteFriend() {
 
-        System.out.print("삭제할 연락처를 입력하세요: ");
+        System.out.print("삭제할 이름을 입력하세요: ");
         String name = scanner.nextLine();
 
 
@@ -36,48 +36,36 @@ public class AddressBook {
         while (iterator.hasNext()){
             Friends next = iterator.next();
             if(next.getName().equals(name)) {
-                index = friendsList.indexOf(next);
+                iterator.remove();      // 안전한 삭제
             }
         }
-        System.out.println(friendsList.get(index).toString());
-
-
+        System.out.println(name + "님의 주소록 정보가 삭제되었습니다. ");
     }
+
     // 조회
     public void searchFriend() {
         System.out.print("찾으실 연락처의 이름을 입력하세요: ");
         String name = scanner.nextLine();
         boolean isSearched = false;
 
-        Iterator<Friends> iterator = friendsList.iterator();
-         int index = 0;
-         while (iterator.hasNext()){
-             Friends next = iterator.next();
-            if (next.getName().equals(name)){
-               index =  friendsList.indexOf(next);
+        for (Friends friends : friendsList) {
+            if(name.equals(friends.getName())) {
+                System.out.println(friends.toString());
+                isSearched = true;
             }
-         }
-        System.out.println(friendsList.get(index).toString());
-        System.out.println();
-
+        }
         if (isSearched == false) {
             System.out.println("입력된 정보가 없습니다. ");
         }
-
-
-
     }
+
     // 출력
     public void printAllFriend() {
         System.out.println("모든 연락처를 출력합니다. ");
         for (Friends friends : friendsList) {
-            System.out.println("이름: " + friends.getName());
-            System.out.println("이메일: " + friends.getEmail());
-            System.out.println("전화번호: " + friends.getPhoneNumber());
+            System.out.println(friends.toString());
             System.out.println();
         }
-
-
         }
 
 

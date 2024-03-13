@@ -1,13 +1,11 @@
 package java_240312.collection.list.ex.ex4;
 
-import java_240312.collection.list.ex.ex3.Friends;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class VotingSystem {
-    /*
+public class Ex4 {
+        /*
          연습문제
 
      간단한 투표 시스템
@@ -71,69 +69,52 @@ public class VotingSystem {
          - 잘못된 번호를 입력받으면 오류 메시지를 출력하고 다시 입력을 요청합니다.
      - printResults() 메서드에서 최종 투표 결과를 출력합니다.
 */
-    // 후보 정보를 가지고 있는 List
-    List<Candidate> candidates = new ArrayList<>();
+    // 절차적 방법으로 풀이
+        public static void main(String[] args) {
+            // 후보 정보 입력
+            List<String> candidates = new ArrayList<>();
+            // 투표 받은 수
+            List<Integer> votes = new ArrayList<>();
 
-    // 생성자: 후보 정보를 초기화
+            // 후보 목록 등록(초기화)
+            candidates.add("고길동");
+            candidates.add("둘리");
+            candidates.add("마이콜");
+            candidates.add("희동이");
 
-
-    public VotingSystem(List<Candidate> candidates) {
-        this.candidates = candidates;
-    }
-
-    Scanner scanner = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        List<Candidate> candidates = new ArrayList<>();
-        VotingSystem votingSystem = new VotingSystem(List.of(new Candidate("고길동", 0),
-                new Candidate("둘리", 0),
-                new Candidate("마이콜", 0),
-                new Candidate("희동이", 0)));
-
-        System.out.println("투표를 시작합니다. ");
-        votingSystem.startVoting();
-        votingSystem.printResults();
-
-
-
-
-
-    }
-
-    // 메서드
-    public void startVoting() {
-        // 후보 출력하기
-        for (int i = 0; i < candidates.size(); i++) {
-            System.out.println(i + 1 + ". " + candidates.get(i).getName());
-            // candidates.get(i): 고길동, 0 (투표수까지 함께 출력되므로 이름만 가지고 오기 위해서 getName()을 사용)
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.print("투표할 번호를 입력하세요. (종료: 0): ");
-            int choice = scanner.nextInt();
-
-            // 0 이면 투표 종료
-            if(choice == 0) break;
-            else if(choice > 0 && choice <= candidates.size()) {
-                // 투표 카운트하기
-                candidates
-                        .get(choice-1)      //
-                                .receiveVote();
-            }else {
-                System.out.println("입력하신 번호는 올바르지 않습니다. ");
+            // 투표 받은 수 초기화
+            for (int i = 0; i < candidates.size(); i++) {
+                votes.add(0);
             }
-        }
 
-    }
+            // 후보 출력하기
+            for (int i = 0; i < candidates.size(); i++) {
+                System.out.println(i + 1 + ". " + candidates.get(i));
+            }
 
-        public void printResults () {
-            System.out.println("최종 결과 입니다.");
+            // 투표 받기
+            Scanner scanner = new Scanner(System.in);
+            while (true) {
+                System.out.print("투표할 번호를 입력하세요. (종료: 0): ");
+                int choice = scanner.nextInt();
+
+                // 0 이면 투표 종료
+                if(choice == 0) break;
+                else if(choice > 0 && choice <= candidates.size()) {
+                    // 투표 카운트하기
+                    Integer vote = votes.get(choice -1);
+                    // 투표 수 가져오기
+                    votes.set(choice-1, vote +1);
+                }else {
+                    System.out.println("입력하신 번호는 올바르지 않습니다. ");
+                }
+            }
+
+            // 반복문 빠져나올 시 투표결과 출력
             System.out.println("[투표결과] ");
             for (int i = 0; i < candidates.size(); i++) {
-                System.out.printf("%s : %d \n", candidates.get(i).getName(), candidates.get(i).getVotes());
+                System.out.printf("%s : %d \n", candidates.get(i), votes.get(i));
             }
+
         }
-
-
-    }
+}

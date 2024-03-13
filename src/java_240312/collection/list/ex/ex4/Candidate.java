@@ -4,9 +4,9 @@ public class Candidate {
     private String name;
     private int votes;
 
-    public Candidate(String name) {
+    public Candidate(String name, int votes) {
         this.name = name;
-        votes = 0;
+        this.votes =votes;
     }
 
     public void receiveVote() {
@@ -24,7 +24,6 @@ public class Candidate {
     @Override
     public String toString() {
         return "이름: '" + name + '\'' +
-                ", 투표 수: " + votes +
-                '}';
+                ", 투표 수: " + votes;
     }
 }
