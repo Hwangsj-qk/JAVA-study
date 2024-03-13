@@ -18,7 +18,18 @@ public class Ex6 {
         // 1. 동적인 배열의 증가
         while (true) {
             System.out.print("성적을 입력하세요 (종료: -1 입력) : ");
+            int score = scanner.nextInt();
+            if(score == -1) {
+                break;
+            }
+            scores = addScores(scores, score);       // 1. 성적을 추가
         }
+        // 2. 평균 계산
+        System.out.println("평균: " + calculateAverage(scores));
+        // 3. 최고 성적
+        System.out.println("최고점수: " + findMaxScore(scores) );
+        // 4. 성적 분포
+        printScoreDistribution(scores);
 
     }
 
@@ -46,14 +57,43 @@ public class Ex6 {
         return sum/scores.length;
     }
 
+    public static int findMaxScore(int [] scores) {
+        // 최고성적 조회 메서드
+        int max = (scores.length > 0) ? scores[0] : 0;
+        // 배열의 길이가 0일 경우 예외처리
+        for (int score : scores) {
+            if(score > max) {
+                max = score;
+            }
+        }
+        return max;
+    }
+
     public static void printScoreDistribution(int scores[]) {
         int [] distribution = new int[5];
         // 성적 분포를 담는 배열
 
         // 성적 분포 출력 메서드
         for (int score : scores) {
-            distribution[0] ++;
+            if(score >= 90) {
+                distribution[0]++;     // A
+            } else if(score >= 80) {
+                distribution[1] ++;     // B
+            } else if (score >= 70) {
+                distribution[2] ++;     // C
+            } else if (score >= 60) {
+                distribution[3]++;      // D
+            } else {
+                distribution[4]++;      // F
+            }
         }
+
+        System.out.println("성적 분포도");
+        System.out.println("A :" + distribution[0] + "명");
+        System.out.println("B :" + distribution[1] + "명");
+        System.out.println("C :" + distribution[2] + "명");
+        System.out.println("D :" + distribution[3] + "명");
+        System.out.println("F :" + distribution[4] + "명");
 
     }
 }
