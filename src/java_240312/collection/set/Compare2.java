@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.TreeSet;
 
 public class Compare2 {
-    // Comparator 인터페이스
+    // Comparator 인터페이스 - List2 마지막 부분과 같이 보기
     static class Person {
         String name;
         int age;
@@ -22,7 +22,7 @@ public class Compare2 {
     }
 
     public static void main(String[] args) {
-        // 비교자 Comparator 정의 (익명객체)
+        // 비교자 Comparator 정의 : 익명 객체로 인터페이스 본문 선언
         Comparator<Person> nameComparator = new Comparator<>() {
             @Override
             public int compare(Person o1, Person o2) {
@@ -52,6 +52,7 @@ public class Compare2 {
 
         for (Person person : treeSet) {
             System.out.println(person);
+            // 이몽룡 -> 임꺽정 -> 전우치 -> 홍길동 (가나다순)
         }
     }
 }
