@@ -68,6 +68,7 @@ public class Ex5 {
     }
 
     public static void main(String[] args) {
+        // Set
         Set<Character> characterSet = new HashSet<>();
 
         characterSet.add(new Character("char001", "Dragon Warrior"));
