@@ -14,7 +14,7 @@ public class Ex6 {
 
 Reservation 클래스 정의
 - 필드: 예약 시간(LocalDateTime start), 예약자명(String name), 장소(String place)
-- 생성자: 시작 시간과 종료 시간을 매개변수로 받아 초기화
+- 생성자: 시작 시간, 예약자명, 장소를 매개변수로 받아 초기화
 - Comparable<Reservation> 인터페이스 구현: 시작 시간을 기준으로 오름차순 정렬
 
 Main 함수에서 회의실 예약 관리
