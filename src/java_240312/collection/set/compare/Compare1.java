@@ -1,4 +1,4 @@
-package java_240312.collection.set;
+package java_240312.collection.set.compare;
 
 import java.util.TreeSet;
 
@@ -14,7 +14,8 @@ public class Compare1 {
     // 0: 이 객체와 저 객체는 같다.
     // 양수: 이 객체가 저 객체보다 크다.
 
-    static class Person implements java.lang.Comparable<Person> {
+    static class Person implements Comparable<Person> {
+        // Comparable 인터페이스를 받은 경우 -> 오버라이딩 필요
         String name;
         int age;
 
@@ -59,7 +60,7 @@ public class Compare1 {
 
         // 요소 출력으로 확인
         for (Person person : personTreeSet) {
-            System.out.print(person);     // 전우치: 20, 홍길동: 30, 임꺽정: 40 -> 기준값(나이)가 중복이면 없어짐
+            System.out.print(person);     // 전우치: 20, 홍길동: 30, 임꺽정: 40 -> 기준값(나이)가 중복이면 없어짐(이몽룡 X)
         }
     }
 }
