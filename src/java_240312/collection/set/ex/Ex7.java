@@ -1,6 +1,7 @@
 package java_240312.collection.set.ex;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.TreeSet;
 
@@ -39,22 +40,29 @@ public class Ex7 {
         }
 
     public static void main(String[] args) {
-        Comparator<Reservation> nameComparator = new Comparator<Reservation>() {
+        Comparator<Reservation> comparator = new Comparator<Reservation>() {
             @Override
             public int compare(Reservation o1, Reservation o2) {
-                return o1.name.compareTo(o2.name);
+                int nameCompared = o1.name.compareTo(o2.name);
+
+                if (nameCompared == 0) {
+                    int placeCompared = o1.place.compareTo(o2.place);
+                    return placeCompared;
+                }
+                return nameCompared;
             }
             
         };
+        // 여러가지 정렬 기준을 가지고 있다면 if 문 사용하기
 
-        Comparator<Reservation> placeComparator = new Comparator<Reservation>() {
-            @Override
-            public int compare(Reservation o1, Reservation o2) {
-                return o1.place.compareTo(o2.place);
-           }
-        };
 
-        TreeSet<Reservation> treeSet = new TreeSet<>(nameComparator);
+        // 만약 사용자에게 스캐너를 통해 예약 시간을 받을 때는 포매터를 설정해줘야 함.
+//        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 시작");
+        // 포매터의 경우 형식을 정확하게 맞추지 않으면 에러 발생 (주의하기)
+//        LocalDateTime.parse("2023-10-10 12:00");    // 이러한 형태는 굳이 포매터를 해주지 않아도 컴퓨터가 이해함.
+//        LocalDateTime.parse("2023년 10월 10일 12시 00분 시작", dateTimeFormatter);     // 만약 바로 파싱을 할거면 포매터 뒤에 입력
+
+        TreeSet<Reservation> treeSet = new TreeSet<>(comparator);
         Reservation reservation1 = new Reservation(LocalDateTime.of(2023,10, 10, 12, 00),
                 "김길동", "회의실A");
         Reservation reservation2 = new Reservation(LocalDateTime.of(2023,10, 10, 10, 00),
@@ -63,6 +71,7 @@ public class Ex7 {
                 "홍길동서", "회의실D");
         Reservation reservation4 = new Reservation(LocalDateTime.of(2023,10, 10, 15, 00),
                 "홍길동남", "회의실C");
+        // 데이터 포매터를 사용하면 코딩 길이를 조금 줄일 수 있음.
 
         treeSet.add(reservation1);
         treeSet.add(reservation2);
