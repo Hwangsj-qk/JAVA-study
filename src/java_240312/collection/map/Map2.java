@@ -63,11 +63,6 @@ public class Map2 {
         System.out.println("bookPageMap = " + bookPageMap);
         // {null=200, 1984=328, 허생전=600, 전우치전=400, 홍길동전=500, 반간예정책=null, 위대한 개츠비=300, 좋은 책=null}
 
-
-
-
-
-
     }
 
 }
