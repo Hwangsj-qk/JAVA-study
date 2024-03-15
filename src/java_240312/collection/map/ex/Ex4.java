@@ -38,10 +38,9 @@ static class Employee{
     String department;
 
     // 생성자
-        public Employee(String id, String name, String department) {
+        public Employee(String id, String name) {
             this.id = id;
             this.name = name;
-            this.department = department;
         }
 
         // 오버라이딩
@@ -61,41 +60,36 @@ static class Employee{
 
         @Override
         public String toString() {
-            return "Employee{" +
-                    "id='" + id + '\'' +
-                    ", name='" + name + '\'' +
-                    ", department='" + department + '\'' +
-                    '}';
+            return "ID:'" + id + '\'' +
+                    ", 이름: '" + name + '\'';
         }
     }
     public static void main(String[] args) {
-        Map<String, Employee> employeeMap = new HashMap<>();
-        Employee employee1 = new Employee("001", "Alice", "개발");
-        Employee employee2 = new Employee("002", "Bob", "디자인");
-        Employee employee3 = new Employee("003", "Charlie", "마케팅");
-        Employee employee4 = new Employee("004", "Emma", "인사");
+        Map<Employee, String > employeeMap = new HashMap<>();
+        employeeMap.put(new Employee("001", "Alice"), "개발");
+        employeeMap.put(new Employee("002", "Bob"), "디자인");
+        employeeMap.put(new Employee("003", "Charlie"), "마케팅");
 
+        employeeMap.put(new Employee("001", "Damon"), "개발");
+        // key가 같은 경우 중복으로 판단
 
+        System.out.println("employeeMap = " + employeeMap);
 
-        employeeMap.put(employee1.id, employee1);
-        employeeMap.put(employee2.id, employee2);
-        employeeMap.put(employee3.id, employee3);
-        employeeMap.put(employee4.id, employee4);
-
-
-
-
-        for (String employee : employeeMap.keySet()) {
-            System.out.println("ID '" + employeeMap.get(employee).id + "' 이름: '" +
-                    employeeMap.get(employee).name + "' 부서: " + employeeMap.get(employee).department);
+        for (Map.Entry<Employee, String> entry : employeeMap.entrySet()) {
+            System.out.println(entry);
         }
 
-        employeeMap.remove("003");
+        // 조회
+        String BobDepartment = employeeMap.get(new Employee("002", "Bob"));
+        // hashCode 동등성 비교로 key를 확인
 
-        System.out.println("\n===== 003 삭제 후 =====");
-        for (String employee : employeeMap.keySet()) {
-            System.out.println("ID '" + employeeMap.get(employee).id + "' 이름: '" +
-                    employeeMap.get(employee).name + "' 부서: " + employeeMap.get(employee).department);
+        System.out.println("BobDepartment = " + BobDepartment);
+
+        // 삭제
+        employeeMap.remove(new Employee("003", "Charlie"));
+
+        for (Map.Entry<Employee, String> entry : employeeMap.entrySet()) {
+            System.out.println(entry);
         }
 
 
