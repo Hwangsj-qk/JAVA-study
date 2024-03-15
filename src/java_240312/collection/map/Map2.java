@@ -13,7 +13,7 @@ public class Map2 {
         bookPageMap.putIfAbsent("1984", 328);
         System.out.println(bookPageMap);        // {1984=328, 위대한 개츠비=180}
 
-        // foreach : 모든 key - value에 대해 실행문을 실행 (반복문)
+        // foreach : 모든 key - value에 대해 실행문을 실행 (반복문) - 람다식
         bookPageMap.forEach((key, value) ->
                 System.out.println(key + "는 " + value + "쪽"));      // 위대한 개츠비는 180쪽
 

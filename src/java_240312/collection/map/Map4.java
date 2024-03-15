@@ -35,7 +35,7 @@ public class Map4 {
             System.out.println(s);
         }
 
-        // LRU (Least Recently Used) Cache : 가장 최근에 접근한 순서에 따라 순서 요소 재배치
+        // LRU (Least Recently Used) Cache : 가장 최근에 접근한 순서에 따라 순서 요소 재배치(컴퓨터 최근에 사용한 파일? 생각하면 쉬움)
         // LinkedHashMap 생성자에서 accessOrder 를 true로 설정할 경우
         LinkedHashMap<Object, Object> lruCache =new LinkedHashMap<>(16, 0.75f, true);
 

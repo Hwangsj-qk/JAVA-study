@@ -22,6 +22,7 @@ public class Map3 {
                     '}';
         }
 
+        // 동등성 비교(equals(), hashCode())
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
