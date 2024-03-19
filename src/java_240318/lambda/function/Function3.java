@@ -33,12 +33,12 @@ public class Function3 {
         Supplier randomSupplier = () -> Math.random();
         System.out.println("랜덤값: " + randomSupplier.get());
 
-        // Function : 입력 -> 반환값
+        // Function : 입력 -> 반환값(매개변수 1개)
         Function<String, Integer> stringLengthFunction = string -> string.length();
         Integer i = stringLengthFunction.apply("이 문자열의 길이를 반환");
         System.out.println("문자열의 길이: " + i);
 
-        // Predicate : 입력에 대해 참 거짓 여부 평가
+        // Predicate : 입력에 대해 참 거짓 여부 평가 (boolean 타입)
         Predicate<String> isTenUpper = string -> string.length() > 10;
         if(isTenUpper.test("이 글자의 길이는 10자가 넘나요?")){
             System.out.println("10자가 넘습니다.");
