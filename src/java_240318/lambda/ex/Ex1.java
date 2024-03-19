@@ -23,6 +23,7 @@ public class Ex1 {
     Charlie: 합격
      */
     public static void main(String[] args) {
+        // 데이터 입력 받기
         Map<String, Integer> userScores =
                 Map.of("Alice", 75,
                         "Bob", 45,
