@@ -23,7 +23,7 @@ public class Ex2 {
 
             scores.stream()
                     .filter(n -> n> 0)
-                    .map(n -> Math.sqrt(n))
+                    .map(Math::sqrt)     // 여기서 매개변수는 전달 역할만 하므로 순수함수로 변경 가능
                     .forEach(System.out::println);
 
         }
