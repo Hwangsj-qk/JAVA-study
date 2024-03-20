@@ -13,11 +13,14 @@ public class Class4 {
 
         // Extract Method 기능으로 객체의 필드에 접근하는 반복되는 코드 블로 메서드로 만든다.
         // 전달된 학생 객체의 필드 값을 읽어서 출력할 수 있다.
+
+        // 출력 방법 1
         printInformation(student1);
         printInformation(student2);
 
 
 
+        // 출력 방법 2
         // 배열 사용하기
         // 학생 타입의 배열을 선언
         Student[] students = new Student[2];
