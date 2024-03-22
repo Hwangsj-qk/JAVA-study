@@ -1,7 +1,5 @@
 package java_240321.thread;
 
-
-
 public class Thread13 {
     // wait, notify : 스레드 간의 통신을 위해 사용되는 메커니즘.
     // Object 클래스의 메서드 일부로 모든 객체에서 사용할 수 있음
@@ -9,13 +7,14 @@ public class Thread13 {
     // wait () : 대기 상태로 만듦
     // notify() : 대기중인 스레드 하나를 깨움
     // notifyAll() : 대기중인 모든 스레드를 깨움
+
     public static void main(String[] args) {
         // 공유 객체 ; 두 스레드가 모두 사용하는 객체
         Object lock = new Object();
 
         Thread thread1 = new Thread(() -> {
             synchronized (lock) {
-                System.out.println("스레드 1 : lock을 쓸 수 있을 때까지 대기합니다");        // (1)
+                System.out.println("스레드 1 : lock을 쓸 수 있을 때까지 대기합니다");    // (1)
                 // 스레드 1은 notify가 선언되기 전까지 계속 잠겨있는 상태
                 // Runnable -> wait 상태로 넘어감
                 try {
@@ -30,6 +29,7 @@ public class Thread13 {
 
         Thread thread2 = new Thread(() -> {
             // 스레드 1이 대기상태로 들어가고 스레드 2가 lock(공유 객체)을 사용할 수 있게 됨
+            // Runnable -> block -> Runnable -> Terminate
             synchronized (lock) {
                 System.out.println("스레드 2 : lock 객체 다 썼음을 알립니다.");         // (2)
                 // lock 객체를 기다리고 있는 대기 중인 스레드에게 알림
@@ -47,6 +47,6 @@ public class Thread13 {
             throw new RuntimeException(e);
         }
         thread2.start();
-
+        // 모든 스레드가 Terminate 되면 main 스레드도 종료
     }
 }
