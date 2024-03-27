@@ -63,6 +63,24 @@ public class Ex1 {
 
             bw.close();
 
+            // 선생님 풀이 : try-with-resource 구문
+            // 해당 블록에서만 사용하는 자원 () 안에 넣고, 블록 이후 자동 종료
+//            String path = "src/java_240326/io_stream/ex/ex1/output.txt";
+//            try(Scanner scanner = new Scanner(System.in);
+//            FileWriter writer = new FileWriter(path)) {
+//                while (true) {
+//                    String input = scanner.nextLine();
+//
+//                    // 조건 검사
+//                    if(input.equals("종료")) break;
+//
+//                    // 쓰기 후 줄바꿈 문자
+//                    writer.write(input + "\n");
+//                }
+//            } catch (IOException e) {
+//                System.out.println("예외 발생");
+//            }
+
 
 
 
