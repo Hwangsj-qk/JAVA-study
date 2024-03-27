@@ -10,6 +10,7 @@ public class Serial1 {
         // 파일 경로 지정
         String filePath = "src/java_240326/io_stream/serial/Person.ser";
 
+        // 역직렬화
         // 객체 생성
         Person person = new Person("홍길동", 30, 180, false, 70,
                 new Career("조선 컴퍼니", 10));
