@@ -7,6 +7,7 @@ import java.io.InputStream;
 
 public class IOStream3 {
     public static void main(String[] args) {
+        // InputSream : 입력 스트림
         // 1바이트씩 읽기
         try {
             InputStream inputStream = new FileInputStream("src/java_240326/io_stream/test1.txt");
