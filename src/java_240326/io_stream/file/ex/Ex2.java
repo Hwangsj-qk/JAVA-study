@@ -1,11 +1,12 @@
 package java_240326.io_stream.file.ex;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Ex2 {
         /*
@@ -64,11 +65,43 @@ public class Ex2 {
      */
 
     public static void main(String[] args) {
-        Path currentPath = Paths.get(
-                "src", "java_240326", "io_stream", "file", "ex");
-        Path targetPath = currentPath.resolve("merge.txt");
+        String currentPath =  "src/java_240326/io_stream/file/ex/";
 
-        Ar
+        // 개수 입력받기
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("병합할 파일의 개수를 입력하세요: ");
+        int fileCount = scanner.nextInt();
+        scanner.nextLine();     // 줄바꿈 문자 제거 버퍼 비우기
+
+        // 병합할 파일 쓰기
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(currentPath + "merged.txt"))){
+
+            // 개수만큼 반복하여 경로 입력받기
+            for (int i = 0; i < fileCount; i++) {
+                System.out.print("파일 경로를 입력하세요: ");
+                String filePath = scanner.nextLine();
+                File file = new File(currentPath + filePath);
+
+                // 파일 읽기
+                try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+                    while (true) {
+                        String line = br.readLine();        // 한 줄씩 읽어오기
+                        if(line == null) break;
+                        // 파일 읽은 라인마다 병합 파일에 쓰고 개행
+                        bw.write(line);
+                        bw.newLine();
+                    }
+                } catch (IOException e) {
+                    System.out.println("경로가 잘못되었습니다. ");
+                    throw  new RuntimeException(e);
+                }
+                bw.write("======================"); // 구분선
+                bw.newLine();
+            }
+            System.out.println("파일 병합이 완료되었습니다. ");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
