@@ -1,6 +1,4 @@
-package quiz_240308.q4;
-
-import java_240304.exception.CustomException1;
+package quiz_240308_3.q4;
 
 import java.util.Scanner;
 

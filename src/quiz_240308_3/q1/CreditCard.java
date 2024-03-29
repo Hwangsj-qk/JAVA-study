@@ -1,4 +1,4 @@
-package quiz_240308.q1;
+package quiz_240308_3.q1;
 
 public class CreditCard implements Payment{
     @Override
