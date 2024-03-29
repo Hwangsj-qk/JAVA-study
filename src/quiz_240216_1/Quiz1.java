@@ -1,4 +1,4 @@
-package quiz_240216;
+package quiz_240216_1;
 
 import java.util.Scanner;
 
