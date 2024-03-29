@@ -1,4 +1,4 @@
-package quiz_240229.quiz1;
+package quiz_240229_2.quiz1;
 
 public class Book {
     String title;

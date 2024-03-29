@@ -1,9 +1,4 @@
-package quiz_240229.quiz2;
-
-import quiz_240229.quiz2.Bicycle;
-import quiz_240229.quiz2.Car;
-import quiz_240229.quiz2.Train;
-import quiz_240229.quiz2.Transport;
+package quiz_240229_2.quiz2;
 
 public class TransportMain {
     public static void main(String[] args) {

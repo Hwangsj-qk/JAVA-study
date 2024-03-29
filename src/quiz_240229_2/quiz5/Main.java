@@ -1,4 +1,4 @@
-package quiz_240229.quiz5;
+package quiz_240229_2.quiz5;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package quiz_240229.quiz3;
+package quiz_240229_2.quiz3;
 
 public class Circle extends Shape{
     double r;
