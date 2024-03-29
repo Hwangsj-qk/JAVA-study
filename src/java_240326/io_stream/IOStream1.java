@@ -11,10 +11,10 @@ public class IOStream1 {
     public static void main(String[] args) {
         // "test.txt"를 도착지로 하는 바이트 출력 스트림을 생성
         // OutputStream outputStream = newFileOutStream("test.txt")
+        // outputStream은 바이트 기반 "출력" 스트림의 최상위 클래스 : 내보내는 기능
 
         // 도착지 경로를 설정(절대경로 또는 상대경로)하면 해당 위치로 파일 생성
         try {
-
             OutputStream outputStream = new FileOutputStream("src/java_240326/io_stream/test1.txt");
             byte b1 = 65;
             byte b2 = 66;
