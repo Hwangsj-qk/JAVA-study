@@ -14,8 +14,7 @@ public class Jdbc2 {
 
         // DriverManager 에서 연결 객체 가져오기
         // Java SE 6.0 이상에서는 자동으로 드라이버(서비스제공자)를 로드
-        Connection conn = null;
-        try {
+        Connection conn = null; try {
             // JDBC 드라이버에서 연결 객체 반환
             conn = DriverManager.getConnection(url, user, password);
             if(conn != null) {      // 성공적으로 연결이 되면 not null이다.
@@ -23,6 +22,7 @@ public class Jdbc2 {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         } finally {
             if(conn != null) {
                 try {
