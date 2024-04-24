@@ -23,11 +23,9 @@ public class Ex3 {
             String url = "jdbc:mysql://localhost:3306/jdbc";
             String user = "root";
             String password = "1234";
-
-            String sql = "UPDATE users SET username = ?, password = ?, age = ?, email = ?" +
-                    "WHERE userId = ?";
-
             Scanner scanner = new Scanner(System.in);
+
+
             System.out.print("업데이터할 userId를 입력하세요: ");
             String userId = scanner.next();
             System.out.print("새로운 사용자 이름을 입력하세요: ");
@@ -38,29 +36,25 @@ public class Ex3 {
             String userAge= scanner.next();
             System.out.print("새로운 이메일 주소를 입력하세요: ");
             String userEmail = scanner.next();
+//
+//            try (Connection conn = DriverManager.getConnection(url, user, password)) {
+//                // 쿼리문 Update 고정적인 부분.
+//                StringBuilder query = new StringBuilder("UPDATE users SET");
+//                // 콤마 SQL문법을 위한 플래그
+//                boolean isfirst = true;
+//
+//                // 동적 쿼리문 변경
+//                // "컬럼명1 = 값1, 컬럼명2 = 값2,..."
+//                // "WHERE userId = ? ";
+//
+//                // 값을 입력받지 않았을 경우
+//                if(!userName.isEmpty()) {
+//                    // 값이 입력되었을 경우
+//                    if(!isfirst) query.append(", ");
+//                    query.append("password = ?");
+//                }
+//            }
 
-            try (Connection conn = DriverManager.getConnection(url, user, password);
-                 PreparedStatement pstmt = conn.prepareStatement(sql)
-            ){
-                pstmt.setString(1, userName);
-                pstmt.setString(2, userPassword);
-                pstmt.setString(3, userAge);
-                pstmt.setString(4, userEmail);
-                pstmt.setString(5, userId);
-
-                int rows = pstmt.executeUpdate();
-
-                if(rows == 1) {
-                    System.out.println("사용자 ID " + userId + "의 정보가 성공적으로 업데이트되었습니다. ");
-                }
-
-                if (userPassword.equals("")) {
-
-                }
-            }
-            catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
 
         }
 }
