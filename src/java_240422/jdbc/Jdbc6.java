@@ -13,7 +13,7 @@ public class Jdbc6 {
 
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
-            // 동적 쿼리를 생성하고 값 지정
+            // "동적" 쿼리를 생성하고 값 지정
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, 10);            // 첫번째 ?에 10이라는 값을 설정
             ResultSet rs = pstmt.executeQuery();            // 실행
@@ -21,6 +21,8 @@ public class Jdbc6 {
             while (rs.next()) {
                 System.out.println(rs.getInt("deptno") + " " + rs.getString("ename"));
             }
+
+            // 자원 정리
             rs.close();
             pstmt.close();
         } catch (SQLException e) {

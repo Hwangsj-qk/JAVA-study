@@ -24,6 +24,7 @@ public class Jdbc8 {
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             // 두번째 매개값에 생성된 key를  리턴
             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            // DB 상에서 AUTO_INCREMENT로 인해 자동으로 생성되어진 KEY를 가져오는 쿼리
             pstmt.setString(1, "눈오는 날");
             pstmt.setString(2, "함박 눈이 내리네요~");
             pstmt.setString(3, "winter");

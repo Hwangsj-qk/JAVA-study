@@ -13,7 +13,7 @@ public class Jdbc5 {
              // 1. 연결
              Statement stmt = conn.createStatement();
              // 2. 쿼리 생성
-             ResultSet rs = stmt.executeQuery("SELECT * FROM no_table ")) {
+             ResultSet rs = stmt.executeQuery("SELECT * FROM no_table ")) {     // 없는 테이블 조회 (예외처리 필요)
         } catch (SQLException e) {
             // 예외 에 관한 상세한 메시지 변환
             String message = e.getMessage();

@@ -10,7 +10,7 @@ public class Jdbc4 {
         String password = "1234";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
-             Statement stmt = conn.createStatement();
+             Statement stmt = conn.createStatement();       // 동적 SQL문
              ResultSet rs = stmt.executeQuery("SELECT * FROM emp ")) {
 
             while (rs.next()) {
