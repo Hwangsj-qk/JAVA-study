@@ -10,7 +10,7 @@ public class UserSelect {
 
         // 연결 객체
         try (Connection conn = DriverManager.getConnection(url, user, dbPassword)) {
-            // 동적 SQL
+            // 동적 SQL(? => 1개)
             String sql = "SELECT userId, username, password, age, email FROM users WHERE userId = ?";
 
             // SQL문 얻고, ? 값 지정
@@ -18,11 +18,11 @@ public class UserSelect {
             pstmt.setString(1, "winter");
 
             // SQL문 실행하여 resultSet을 통한 데이터 접근
-            ResultSet rs = pstmt.executeQuery();
+            ResultSet rs = pstmt.executeQuery();        // SELECT 문이므로 executeQuery 사용
 
             // 결과 셋에 1개만 데이터가 있을 경우 if (rs.next())
             if (rs.next()) {
-                // 데이터에서 객체로 값을 매핑
+                // 데이터에서 "객체"로 값을 매핑
                 User user1 = new User(rs.getString("userId"),       // 컬럼명
                         rs.getString("username"),
                         rs.getString("password"),

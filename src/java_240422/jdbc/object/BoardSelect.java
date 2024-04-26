@@ -15,6 +15,7 @@ public class BoardSelect {
         String sql = """
                 SELECT boardNo, title, content, writer, date, filename, filedata FROM boards WHERE writer = ?
                 """;
+
         List<Board> boardList = new ArrayList<>();
 
         // 연결 객체

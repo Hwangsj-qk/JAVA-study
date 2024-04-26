@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Board {
+    // 필드 (컬럼명)
     private int borardNo;
     private String title;
     private String content;
@@ -13,6 +14,7 @@ public class Board {
     private String filename;
     private Blob filedata;
 
+    // 생성자
     public Board(int borardNo, String title, String content, String writer, Date date, String filename, Blob filedata) {
         this.borardNo = borardNo;
         this.title = title;
